@@ -1,10 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import ChatForm from "@/app/components/chat/ChatForm";
+import ChatMessage from "@/app/components/chat/ChatMessage";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <ChatMessage />
+      <ChatForm />
+    </>
   );
 }
