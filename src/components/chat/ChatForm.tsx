@@ -1,8 +1,10 @@
-"user client";
+"use client";
 
-import { ChangeEvent, KeyboardEvent, useState } from "react";
+import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { sendMessageAtom } from "@/common/store/chat/chat";
+import { Button } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 export const ChatForm: React.FC = () => {
   const [message, setMessage] = useState<string>("");
@@ -63,20 +65,14 @@ export const ChatForm: React.FC = () => {
             }
           }}
         />
-        <button
-          style={{
-            padding: 10,
-            background: "#006BD6",
-            color: "white",
-            borderRadius: 10,
-            border: "none",
-          }}
+        <Button
+          variant="contained"
           onClick={() => {
             sendMessage();
           }}
         >
-          送信
-        </button>
+          <SendIcon />
+        </Button>
       </div>
     </div>
   );
