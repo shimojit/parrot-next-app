@@ -26,7 +26,7 @@ export const ChatForm: React.FC = () => {
       });
 
       const data = await response.json();
-      setSender(true);
+      if (!data) setSender(true);
     } catch (err) {
       console.error(err);
     }
